@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import HomepageHero from '../components/HomepageHero.astro';
+import heroImage from '../assets/header.jpg';
+import { Picture } from '@astrojs/image/components';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<HomepageHero image={heroImage} alt="Lotus flower on water" />
+		<div class="philosopy">
+			<h1>My Philosophy</h1>
+		</div>
+		<div class="about">
+			<Picture class="headshot" src={heroImage} widths={[400, 800, 1500]} sizes="(max-width: 200px) 200px" alt="" />
+			<h1>Your stuff here</h1>
+	</div>
+	</main>
+</Layout>
+
+<style>
+	/* main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	} */
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+
+	.headshot {
+		width: 300px;
+		height: 300px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	.about {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+	}
+</style>

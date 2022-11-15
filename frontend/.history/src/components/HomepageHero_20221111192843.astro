@@ -1,0 +1,24 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+export interface Props {
+	image: string;
+  alt: string;
+}
+
+const { image, alt } = Astro.props;
+---
+
+<section class="hero">
+  <Picture src={image} widths={[400, 800, 1500]} sizes="100vw, 736px" alt={alt} />
+</section>
+
+<style>
+  .hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
